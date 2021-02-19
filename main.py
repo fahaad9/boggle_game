@@ -19,12 +19,14 @@ def boggle_solver(string):
         data = response.json()
         json_formatted_str = json.dumps(data, indent=2)
         print(json_formatted_str)
+        print(len(json_formatted_str))
     else:
         print(response.status_code)
         print("Invalid Response from the URL")
 
 if __name__ == '__main__':
-    val = input("Enter your value: ")
+    val = input("Enter your boggle board: ")
     build_board(val)
+    #SERSPATGLINESERS
 
 
