@@ -1,6 +1,7 @@
 import requests
 import json
 
+
 def build_board(string):
     """Build board from string"""
     if len(string) != 16:
@@ -24,7 +25,6 @@ def boggle_solver(string):
 
 if __name__ == '__main__':
     val = input("Enter your value: ")
-    # val = "SERSPATGLINESERS"
     build_board(val)
 
 
