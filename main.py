@@ -13,12 +13,14 @@ def build_board(string):
 def boggle_solver(string):
     base_url = 'http://api.codebox.org.uk/boggle/'
     url = base_url + string
-    print(url)
     response = requests.get(url)
-    print(response)
-    data = response.json()
-    json_formatted_str = json.dumps(data, indent=2)
-    print(json_formatted_str)
+    if response.status_code == 200:
+        data = response.json()
+        json_formatted_str = json.dumps(data, indent=2)
+        print(json_formatted_str)
+    else:
+        print(response.status_code)
+        print("Invalid Response from the URL")
 
 if __name__ == '__main__':
     val = input("Enter your value: ")
